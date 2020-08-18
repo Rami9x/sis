@@ -1,2 +1,150 @@
 hi
 hi
+start
+
+total 12
+-rw-r-----  1 root   root     4551 Aug 18 16:00 Certificate_attached_for_clp-api.sbilosuat.onlinesbi.com.zip
+drwxr-xr-x. 5 oracle oinstall 4096 Jul 13  2018 OHS
+[root@LLMSCLPWEB1UAT components]# mv Certificate_attached_for_clp-api.sbilosuat.onlinesbi.com.zip Certificate_attached.zip
+[root@LLMSCLPWEB1UAT components]# ll
+total 12
+-rw-r-----  1 root   root     4551 Aug 18 16:00 Certificate_attached.zip
+drwxr-xr-x. 5 oracle oinstall 4096 Jul 13  2018 OHS
+[root@LLMSCLPWEB1UAT components]# chmod 755 Certificate_attached.zip
+[root@LLMSCLPWEB1UAT components]# ll
+total 12
+-rwxr-xr-x  1 root   root     4551 Aug 18 16:00 Certificate_attached.zip
+drwxr-xr-x. 5 oracle oinstall 4096 Jul 13  2018 OHS
+[root@LLMSCLPWEB1UAT components]# unzip Certificate_attached.zip
+Archive:  Certificate_attached.zip
+  inflating: clp-api_sbilosuat_onlinesbi_com.txt
+  inflating: DigiCert EV RSA CA G2.txt
+  inflating: DigiCert Global Root G2.txt
+[root@LLMSCLPWEB1UAT components]# ll
+total 24
+-rwxr-xr-x  1 root   root     4551 Aug 18 16:00 Certificate_attached.zip
+-rw-r-----  1 root   root     2532 Aug  5 13:16 clp-api_sbilosuat_onlinesbi_com.txt
+-rw-r-----  1 root   root     1904 Aug  5 13:16 DigiCert EV RSA CA G2.txt
+-rw-r-----  1 root   root     1316 Aug  5 13:16 DigiCert Global Root G2.txt
+drwxr-xr-x. 5 oracle oinstall 4096 Jul 13  2018 OHS
+
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+-rwxr-xr-x. 1 oracle oinstall    819 Jul  1  2018 stopRSDaemon.sh
+[root@LLMSCLPWEB1UAT bin]# nohup ./startNodeManager.sh &
+[1] 8040
+[root@LLMSCLPWEB1UAT bin]# nohup: ignoring input and appending output to `nohup.out'
+
+[root@LLMSCLPWEB1UAT bin]# ./startComponent.sh ohs1
+Starting system Component ohs1 ...
+
+Initializing WebLogic Scripting Tool (WLST) ...
+
+Welcome to WebLogic Server Administration Scripting Shell
+
+Type help() for help on available commands
+
+Reading domain from /data3/Oracle/user_projects/domains/CLP
+
+
+Connecting to Node Manager ...
+Successfully Connected to Node Manager.
+Starting server ohs1 ...
+This Exception occurred at Tue Aug 18 16:13:31 IST 2020.
+weblogic.nodemanager.NMException: Received error message from Node Manager Server: [Server start command for OHS server 'ohs1' failed due to: [Failed to start the server ohs1
+Check log file /data3/Oracle/user_projects/domains/CLP/system_components/OHS/ohs_nm.log
+Check log file /data3/Oracle/user_projects/domains/CLP/servers/ohs1/logs/ohs1.log]. Please check Node Manager log and/or server 'ohs1' log for detailed information.]. Please check Node Manager log for details.
+Error: Error occurred while performing nmStart : Error Starting server ohs1 : Received error message from Node Manager Server: [Server start command for OHS server 'ohs1' failed due to: [Failed to start the server ohs1
+Check log file /data3/Oracle/user_projects/domains/CLP/system_components/OHS/ohs_nm.log
+Check log file /data3/Oracle/user_projects/domains/CLP/servers/ohs1/logs/ohs1.log]. Please check Node Manager log and/or server 'ohs1' log for detailed information.]. Please check Node Manager log for details.
+Use dumpStack() to view the full stacktrace :
+
+
+Exiting WebLogic Scripting Tool.
+
+Done
+[root@LLMSCLPWEB1UAT bin]#
+
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+REEOR
+
+
+
+
+[2020-07-31T12:36:36.6441+05:30] [OHS] [ERROR:32] [OH99999] [ossl] [client_id: 10.0.27.252] [host_id: LLMSCLPWEB1UAT] [host_addr: 10.189.49.199] [pid: 3759] [tid: 140570097866496] [user: root] [VirtualHost: clp-api.sbilosuat.onlinesbi.com:443] OHS:2079 Client SSL handshake error, nzos_Handshake returned 29005(server clp-api.sbilosuat.onlinesbi.com:443)
+[2020-07-31T12:36:36.6441+05:30] [OHS] [ERROR:32] [OH99999] [ossl] [host_id: LLMSCLPWEB1UAT] [host_addr: 10.189.49.199] [pid: 3759] [tid: 140570097866496] [user: root] [VirtualHost: clp-api.sbilosuat.onlinesbi.com:443] OHS:2171 NZ Library Error: Unknown error
+[2020-07-31T12:43:45.2278+05:30] [OHS] [ERROR:32] [OH99999] [ossl] [host_id: LLMSCLPWEB1UAT] [host_addr: 10.189.49.199] [pid: 24220] [tid: 139820147693376] [user: root] [VirtualHost: clp-api.sbilosuat.onlinesbi.com:443] OHS:2057 Init: (clp-api.sbilosuat.onlinesbi.com:443) Unable to initialize SSL environment, nzos call nzosSetCredential returned 28791
+[2020-07-31T12:43:45.2282+05:30] [OHS] [ERROR:32] [OH99999] [ossl] [host_id: LLMSCLPWEB1UAT] [host_addr: 10.189.49.199] [pid: 24220] [tid: 139820147693376] [user: root] [VirtualHost: clp-api.sbilosuat.onlinesbi.com:443] OHS:2171 NZ Library Error: Unknown error
+[2020-07-31T12:44:15.2242+05:30] [OHS] [ERROR:32] [OH99999] [ossl] [host_id: LLMSCLPWEB1UAT] [host_addr: 10.189.49.199] [pid: 24360] [tid: 139757340596032] [user: root] [VirtualHost: clp-api.sbilosuat.onlinesbi.com:443] OHS:2057 Init: (clp-api.sbilosuat.onlinesbi.com:443) Unable to initialize SSL environment, nzos call nzosSetCredential returned 28791
+[2020-07-31T12:44:15.2246+05:30] [OHS] [ERROR:32] [OH99999] [ossl] [host_id: LLMSCLPWEB1UAT] [host_addr: 10.189.49.199] [pid: 24360] [tid: 139757340596032] [user: root] [VirtualHost: clp-api.sbilosuat.onlinesbi.com:443] OHS:2171 NZ Library Error: Unknown error
+[2020-08-18T16:13:30.3485+05:30] [OHS] [ERROR:32] [OH99999] [ossl] [host_id: LLMSCLPWEB1UAT] [host_addr: 10.189.49.199] [pid: 8171] [tid: 140347011168064] [user: root] [VirtualHost: clp-api.sbilosuat.onlinesbi.com:443] OHS:2057 Init: (clp-api.sbilosuat.onlinesbi.com:443) Unable to initialize SSL environment, nzos call nzosSetCredential returned 28791
+[2020-08-18T16:13:30.3488+05:30] [OHS] [ERROR:32] [OH99999] [ossl] [host_id: LLMSCLPWEB1UAT] [host_addr: 10.189.49.199] [pid: 8171] [tid: 140347011168064] [user: root] [VirtualHost: clp-api.sbilosuat.onlinesbi.com:443] OHS:2171 NZ Library Error: Unknown error
+[root@LLMSCLPWEB1UAT bin
+
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++TO install
+
+
+
+
+drwxr-xr-x.  4 oracle oinstall 4096 Jul  1  2018 xdk
+[root@LLMSCLPWEB1UAT Oracle]# cd oracle_common/bin/
+[root@LLMSCLPWEB1UAT bin]# ./orapki wallet add -wallet /data3/Oracle/user_projects/domains/CLP/config/fmwconfig/components/OHS/instances/ohs1/SSLWALLT -user_cert -cert /data3/Oracle/user_projects/domains/CLP/config/fmwconfig/components/OHS/instances/ohs1/SSLWALLT/clp-api_sbilosuat.cer
+Oracle PKI Tool : Version 12.2.1.1.0
+Copyright (c) 2004, 2016, Oracle and/or its affiliates. All rights reserved.
+
+Cannot modify auto-login (sso) wallet
+Enter wallet password:
+Operation is successfully completed.
+[root@LLMSCLPWEB1UAT bin]# ./orapki wallet add -wallet /data3/Oracle/user_projects/domains/CLP/config/fmwconfig/components/OHS/instances/ohs1/SSLWALLT -trusted_cert -cert /data3/Oracle/user_projects/domains/CLP/config/fmwconfig/components/OHS/instances/ohs1/SSLWALLT/DigiCerRootCA.cer
+Oracle PKI Tool : Version 12.2.1.1.0
+Copyright (c) 2004, 2016, Oracle and/or its affiliates. All rights reserved.
+
+Cannot modify auto-login (sso) wallet
+Enter wallet password:
+Operation is successfully completed.
+[root@LLMSCLPWEB1UAT bin]# ./orapki wallet add -wallet /data3/Oracle/user_projects/domains/CLP/config/fmwconfig/components/OHS/instances/ohs1/SSLWALLT -trusted_cert -cert /data3/Oracle/user_projects/domains/CLP/config/fmwconfig/components/OHS/instances/ohs1/SSLWALLT/DigiCertSHA2ServerCA.cer
+Oracle PKI Tool : Version 12.2.1.1.0
+Copyright (c) 2004, 2016, Oracle and/or its affiliates. All rights reserved.
+
+Cannot modify auto-login (sso) wallet
+Enter wallet password:
+Operation is successfully completed.
+[root@LLMSCLPWEB1UAT bin]#
+
+
+
+Initializing WebLogic Scripting Tool (WLST) ...
+
+Welcome to WebLogic Server Administration Scripting Shell
+
+Type help() for help on available commands
+
+Reading domain from /data3/Oracle/user_projects/domains/CLP
+
+
+Connecting to Node Manager ...
+Successfully Connected to Node Manager.
+Starting server ohs1 ...
+Successfully started server ohs1 ...
+Successfully disconnected from Node Manager.
+
+
+Exiting WebLogic Scripting Tool.
+
+Done
+[root@LLMSCLPWEB1UAT bin]# ps -ef |grep ohs
+root      8443     1  1 16:30 ?        00:00:00 /data3/Oracle/wlserver/../ohs/bin/httpd -DOHS_MPM_EVENT -d /data3/Oracle/user_projects/domains/CLP/config/fmwconfig/components/OHS/instances/ohs1 -k start -f /data3/Oracle/user_projects/domains/CLP/config/fmwconfig/components/OHS/instances/ohs1/httpd.conf
+root      8444  8443  0 16:30 ?        00:00:00 /data3/Oracle/wlserver/../ohs/bin/odl_rotatelogs -l /data3/Oracle/user_projects/domains/CLP/servers/ohs1/logs/ohs1-%Y%m%d%H%M%S.log 10M 70M
+root      8445  8443  0 16:30 ?        00:00:00 /data3/Oracle/wlserver/../ohs/bin/odl_rotatelogs /data3/Oracle/user_projects/domains/CLP/servers/ohs1/logs/access_log 43200
+root      8446  8443  0 16:30 ?        00:00:00 /data3/Oracle/wlserver/../ohs/bin/odl_rotatelogs /data3/Oracle/user_projects/domains/CLP/servers/ohs1/logs/admin_log 43200
+root      8447  8443  0 16:30 ?        00:00:00 /data3/Oracle/wlserver/../ohs/bin/odl_rotatelogs -l -h:/data3/Oracle/user_projects/domains/CLP/config/fmwconfig/components/OHS/instances/ohs1/component_events.xml_ohs1 /data3/Oracle/user_projects/domains/CLP/auditlogs/OHS/ohs1/audit-pid8443-%Y%m%d%H%M%S.log 1M
+root      8448  8443  0 16:30 ?        00:00:00 /data3/Oracle/wlserver/../ohs/bin/httpd -DOHS_MPM_EVENT -d /data3/Oracle/user_projects/domains/CLP/config/fmwconfig/components/OHS/instances/ohs1 -k start -f /data3/Oracle/user_projects/domains/CLP/config/fmwconfig/components/OHS/instances/ohs1/httpd.conf
+root      8449  8443  0 16:30 ?        00:00:00 /data3/Oracle/wlserver/../ohs/bin/httpd -DOHS_MPM_EVENT -d /data3/Oracle/user_projects/domains/CLP/config/fmwconfig/components/OHS/instances/ohs1 -k start -f /data3/Oracle/user_projects/domains/CLP/config/fmwconfig/components/OHS/instances/ohs1/httpd.conf
+root      8450  8443  0 16:30 ?        00:00:00 /data3/Oracle/wlserver/../ohs/bin/httpd -DOHS_MPM_EVENT -d /data3/Oracle/user_projects/domains/CLP/config/fmwconfig/components/OHS/instances/ohs1 -k start -f /data3/Oracle/user_projects/domains/CLP/config/fmwconfig/components/OHS/instances/ohs1/httpd.conf
+root      8452  8443  0 16:30 ?        00:00:00 /data3/Oracle/wlserver/../ohs/bin/httpd -DOHS_MPM_EVENT -d /data3/Oracle/user_projects/domains/CLP/config/fmwconfig/components/OHS/instances/ohs1 -k start -f /data3/Oracle/user_projects/domains/CLP/config/fmwconfig/components/OHS/instances/ohs1/httpd.conf
+root      8571  7957  0 16:31 pts/0    00:00:00 grep ohs
+[root@LLMSCLPWEB1UAT bin]# hostname -i
