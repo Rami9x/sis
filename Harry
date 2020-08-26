@@ -148,3 +148,47 @@ root      8450  8443  0 16:30 ?        00:00:00 /data3/Oracle/wlserver/../ohs/bi
 root      8452  8443  0 16:30 ?        00:00:00 /data3/Oracle/wlserver/../ohs/bin/httpd -DOHS_MPM_EVENT -d /data3/Oracle/user_projects/domains/CLP/config/fmwconfig/components/OHS/instances/ohs1 -k start -f /data3/Oracle/user_projects/domains/CLP/config/fmwconfig/components/OHS/instances/ohs1/httpd.conf
 root      8571  7957  0 16:31 pts/0    00:00:00 grep ohs
 [root@LLMSCLPWEB1UAT bin]# hostname -i
+
+
+
+
+
+
+
+
+
+26Aug2020
+
+
+
+
+[root@LLMSCLPWEB1PROD oracle_common]# cd bin/
+[root@LLMSCLPWEB1PROD bin]# ./orapki wallet add -wallet /data3/Middleware/user_projects/domains/CLP/config/fmwconfig/components/OHS/instances/ohs1/SSLWALLT -user_cert -cert /data3/Middleware/user_projects/domains/CLP/config/fmwconfig/components/OHS/instances/ohs1/SSLWALLT/losclp_onlinesbi_com.cer
+Oracle PKI Tool : Version 12.2.1.3.0
+Copyright (c) 2004, 2017, Oracle and/or its affiliates. All rights reserved.
+
+ewallet.p12 not present at /data3/Middleware/user_projects/domains/CLP/config/fmwconfig/components/OHS/instances/ohs1/SSLWALLT
+PKI-02003: Unable to load the wallet at: /data3/Middleware/user_projects/domains/CLP/config/fmwconfig/components/OHS/instances/ohs1/SSLWALLT
+[root@LLMSCLPWEB1PROD bin]# ./orapki wallet add -wallet /data3/Middleware/user_projects/domains/CLP/config/fmwconfig/components/OHS/instances/ohs1/SLLWALLT -user_cert -cert /data3/Middleware/user_projects/domains/CLP/config/fmwconfig/components/OHS/instances/ohs1/SLLWALLT/losclp_onlinesbi_com.cer
+Oracle PKI Tool : Version 12.2.1.3.0
+Copyright (c) 2004, 2017, Oracle and/or its affiliates. All rights reserved.
+
+Cannot modify auto-login (sso) wallet
+Enter wallet password:
+Operation is successfully completed.
+[root@LLMSCLPWEB1PROD bin]# ./orapki wallet add -wallet /data3/Middleware/user_projects/domains/CLP/config/fmwconfig/components/OHS/instances/ohs1/SLLWALLT -trusted_cert -cert /data3/Middleware/user_projects/domains/CLP/config/fmwconfig/components/OHS/instances/ohs1/SLLWALLT/DigiCertGlobalCA.cer
+Oracle PKI Tool : Version 12.2.1.3.0
+Copyright (c) 2004, 2017, Oracle and/or its affiliates. All rights reserved.
+
+Cannot modify auto-login (sso) wallet
+Enter wallet password:
+Operation is successfully completed.
+[root@LLMSCLPWEB1PROD bin]# ./orapki wallet add -wallet /data3/Middleware/user_projects/domains/CLP/config/fmwconfig/components/OHS/instances/ohs1/SLLWALLT -trusted_cert -cert /data3/Middleware/user_projects/domains/CLP/config/fmwconfig/components/OHS/instances/ohs1/SLLWALLT/DigiCertGlobalRootG2.cer
+Oracle PKI Tool : Version 12.2.1.3.0
+Copyright (c) 2004, 2017, Oracle and/or its affiliates. All rights reserved.
+
+Cannot modify auto-login (sso) wallet
+Enter wallet password:
+Operation is successfully completed.
+[root@LLMSCLPWEB1PROD bin]#
+
