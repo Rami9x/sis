@@ -1,0 +1,26 @@
+Domain HOme:  /data1/Middleware/user_projects/domains/agri_yono/
+
+JAVA _HOME /u01/Oracle/Middleware/user_projects/domains/Oracle_ACS/bin/setNMJavaHome.sh
+/u01/Oracle/Middleware/user_projects/domains/Oracle_ACS/bin/setDomainEnv.sh
+/u01/Oracle/Middleware/oui/bin/setProperty.sh
+/u01/Oracle/Middleware/oui/bin/viewInventory.sh
+/u01/Oracle/Middleware/oui/bin/launch.sh
+/u01/Oracle/Middleware/oui/bin/compareInventory.sh
+/u01/Oracle/Middleware/user_projects/domains/Oracle_ACS/nodemanager/nodemanager.properties
+/u01/Oracle/Middleware/user_projects/domains/Oracle_ACS/init-info/tokenValue.properties
+/u01/Oracle/Middleware/oui/.globalEnv.properties
+
+
+/u01/Oracle/Middleware/user_projects/domains/Oracle_ACS/init-info/nodemanager-properties.xml
+/u01/Oracle/Middleware/user_projects/domains/Oracle_ACS/init-info/startscript.xml
+/u01/Oracle/Middleware/user_projects/domains/Oracle_ACS/init-info/domain-info.xml
+/u01/Oracle/Middleware/inventory/Components/oracle.wls.core.app.server/12.2.1.3.0/context.xml
+
+
+find . -type f -name "*.sh" -exec grep -il "/data1/Middleware/user_projects/domains/agri_yono/jdk1.7.0_181" {} \;
+find . -type f -name "*.properties" -exec grep -il "/u01/Softwares/jdk1.8.0_221" {} \;
+find . -type f -name "*.xml" -exec grep -il "/u01/Softwares/jdk1.8.0_221" {} \;
+
+
+
+sed 's/jdk1.7.0_181/jdk1.8.0_261/' setDomainEnv.sh >> ChangesetDomainEnv.sh
