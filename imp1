@@ -1,0 +1,816 @@
+tcp        0      0 ::ffff:10.191.154.132:16201 :::*                        LISTEN
+[oracle@LLMSSMEAGRIAPP1UAT logs]$
+[oracle@LLMSSMEAGRIAPP1UAT logs]$
+[oracle@LLMSSMEAGRIAPP1UAT logs]$ history
+   21  . ./setDomainEnv.sh
+   22  cd bin/
+   23  ls -lrt
+   24  ps -ef | grep java
+   25  nohup ./startWebLogic.sh &
+   26  tail -f nohup.out
+   27  ls -lrt
+   28  tail -1000f nohup.out
+   29  ls -lrt
+   30  pwd
+   31  cd ../../
+   32  ll
+   33  cd oracle_common/common/bin
+   34  ll
+   35  ./wlst.sh
+   36  cd -
+   37  ll
+   38  cd user_projects/
+   39  ll
+   40  cd domains/
+   41  ll
+   42  cd DMS_domain/
+   43  ll
+   44  cd config/
+   45  ls -lrt
+   46  mkdir backup
+   47  ls -lrt
+   48  pwd
+   49  mv config.xml_25072020_1 /UCM12c/Oracle/Middleware/Oracle_Home/user_projects/domains/DMS_domain/config/backup
+   50  mv config.xml /UCM12c/Oracle/Middleware/Oracle_Home/user_projects/domains/DMS_domain/config/backup
+   51  ls -lrt
+   52  mv config.xml_25072020 config.xml
+   53  ls -lrt
+   54  history
+   55  ls -lrt
+   56  pwd
+   57  cd ../../../../
+   58  ll
+   59  cd oracle_common/common/bin/
+   60  ls -lrt
+   61  ll
+   62  ./wlst.sh
+   63  ls -lrt
+   64  cd ../../
+   65  ll
+   66  cd ../
+   67  ll
+   68  cd user_projects/
+   69  cd domains/
+   70  ll
+   71  cd DMS_domain/
+   72  ll
+   73  cd servers/
+   74  ll
+   75  cd UCM_server1/
+   76  ll
+   77  cd security/
+   78  ll
+   79  cd ../
+   80  ll
+   81  cd ../../
+   82  ;;
+   83  ll
+   84  cd config/
+   85  ll
+   86  cd fmwconfig/
+   87  ll
+   88  ls -lrt
+   89  pwd
+   90  cd ../../
+   91  cd Oracle_Home/
+   92  cd oracle_common/common/bin/
+   93  ls -lrt
+   94  ll
+   95  ./wlst.sh
+   96  pwd
+   97  ll
+   98  ll ../../../user_projects/domains/DMS_domain/config/
+   99  cd /UCM12c/
+  100  ls -lrt
+  101  cd Oracle/Middleware/Oracle_Home/user_projects/domains/DMS_domain/
+  102  ls -lrt
+  103  cd config/
+  104  ls -lrt
+  105  cd fmwconfig/
+  106  ls -lrt
+  107  cat jps-config.xml
+  108  ls -lrt
+  109  vim jps-config.xml
+  110  vim jps-config-jse.xml
+  111  cd ..
+  112  ls -lrt
+  113  vim config.xml
+  114  ls -lrt
+  115  cd backup/
+  116  ls -lrt
+  117  cd ..
+  118  ls -lrt
+  119  cd jdbc/
+  120  ls -lrt
+  121  cat opss-audit-jdbc.xml
+  122  ls -lrt
+  123  cd ..
+  124  ls -lrt
+  125  cd ../
+  126  cd ..
+  127  cd ../../
+  128  cd ..
+  129  ls -lrt
+  130  cd Middleware/
+  131  ls -lrt
+  132  cd Oracle_Home/
+  133  ls -lrt
+  134  cd user_projects/domains/DMS_domain/servers/AdminServer
+  135  ls -lrt
+  136  cd logs/
+  137  ls -lrt
+  138  tail -f DMS_domain.log
+  139  ls -lrt
+  140  tail -f AdminServer.log
+  141  cat AdminServer.log
+  142  cd ../../
+  143  cd ../../../
+  144  ls -lrt
+  145  cd Middleware/Oracle_Home/
+  146  ls -lrt
+  147  cd oracle_common/common/bin/
+  148  ./wlst.sh
+  149  pwd
+  150  cd ../../
+  151  cd ..
+  152  cd user_projects/domains/DMS_domain/config/fmwconfig/
+  153  pwd
+  154  ls -lrt
+  155  cd /UCM12c/Oracle/Middleware/Oracle_Home/oracle_common/common/bin
+  156  ./wlst.sh
+  157  cd /UCM12c/Oracle/Middleware/Oracle_Home/user_projects/domains/DMS_domain/config/fmwconfig
+  158  ls -lrt
+  159  chmod 755 jps-config.xml
+  160  ls -lrt
+  161  chmod 755 jps-config-jse.xml
+  162  ls -lrt
+  163  cd /UCM12c/Oracle/Middleware/Oracle_Home/oracle_common/common/bin
+  164  ./wlst.sh
+  165  who am i
+  166  whoami
+  167  id
+  168  ls -lrt
+  169  ls -ltrh wlst.sh
+  170  chmod -R 775 wlst.sh
+  171  ls -lrt
+  172  ./wlst.sh
+  173  cd ../../
+  174  xs ..
+  175  cd ..
+  176  cd user_projects/domains/DMS_domain/bin/
+  177  ls -lrt
+  178  . ./setDomainEnv.sh
+  179  cd bin/
+  180  ./startWebLogic.sh
+  181  cd ..
+  182  ls -lrt
+  183  cd DMS_domain/servers/AdminServer/data/
+  184  ls -lrt
+  185  cd ldap/
+  186  ls -lrt
+  187  rm DefaultAuthenticatormyrealmInit.initialized
+  188  ls -lrt
+  189  cd ..
+  190  ls -lrt
+  191  cd ..
+  192  ls -lrt
+  193  cd security/
+  194  ls -lrt
+  195  cat boot.properties
+  196  vim boot.properties
+  197  ls -lrt
+  198  cd ..
+  199  ls -lrt
+  200  cd ..
+  201  ls -lrt
+  202  cd security/
+  203  ls -lrt
+  204  mv DefaultAuthenticatorInit.ldift DefaultAuthenticatorInit.ldift_bkp
+  205  ls -lrt
+  206  java weblogic.security.utils.AdminAccount weblogic weblogic1
+  207  cd ..
+  208  ls -lrt
+  209  cd bin/
+  210  ls -lrt
+  211  vim setDomainEnv.sh
+  212  echo $JAVA_HOME
+  213  cd /UCM12c/jdk1.8.0_201/bin/
+  214  ./java weblogic.security.utils.AdminAccount weblogic weblogic1 /UCM12c/Oracle/Middleware/Oracle_Home/user_projects/domains/DMS_domain/security/
+  215  cd /UCM12c/Oracle/Middleware/Oracle_Home/user_projects/domains/DMS_domain/security/
+  216  ls -lrt
+  217  cd ..
+  218  cd servers/AdminServer/data/
+  219  ls -lrt
+  220  cd ldap/
+  221  ls -lrt
+  222  rm DefaultAuthenticatormyrealmInit.initialized
+  223  cd ..
+  224  ls -lrt
+  225  cd ..
+  226  ls -lrt
+  227  cd security/
+  228  ls -lrt
+  229  cat boot.properties
+  230  cd ../../
+  231  cd ..
+  232  cd bin/
+  233  ./startWebLogic.sh
+  234  nohup ./startWebLogic.sh &
+  235  tail -f nohup.out
+  236  nohup ./startNodeManager.sh &
+  237  tail -f nohup.out
+  238  ls -lrt
+  239  cd ..
+  240  ls -lrt
+  241  cd servers/AdminServer
+  242  ls -lrt
+  243  cd data/
+  244  ls -lrt
+  245  mv ldap ldap_bkp
+  246  ls -lrt
+  247  pwd
+  248  ls -lrt
+  249  mv ldap_bkp ldap
+  250  ls -lrt
+  251  cd ..
+  252  netstat -nltp
+  253  cd ..
+  254  ls -lrt
+  255  cd UCM_server1/
+  256  ls -lrt
+  257  cd data/
+  258  ls -lrt
+  259  mv ldap ldap_270720
+  260  ls -lrt
+  261  pwd
+  262  cd ../../
+  263  cd AdminServer/data/
+  264  ls -lrt
+  265  cp -r ldap /UCM12c/Oracle/Middleware/Oracle_Home/user_projects/domains/DMS_domain/servers/UCM_server1/data
+  266  ls -lrt
+  267  cd ../../
+  268  cd UCM_server1/
+  269  ls -lrt
+  270  cd data/
+  271  ls -lrt
+  272  cd ..
+  273  ls -lrt
+  274  cd logs/
+  275  ls -lrt
+  276  tail -10000000f UCM_server1.out
+  277  cd /UCM12c/Oracle/Middleware/Oracle_Home/user_projects/domains/DMS_domain/servers/UCM_server1/
+  278  ls -lrt
+  279  cd logs/
+  280  ls -lrt
+  281  tail -10000000000f UCM_server1.out
+  282  locate opss-rest.war
+  283  cd /UCM12c/Oracle/Middleware/Oracle_Home/user_projects/domains/DMS_domain/config/deployments/
+  284  ls -lrt
+  285  cd ..
+  286  ls -lrt
+  287  cd bin/
+  288  cd ..
+  289  cd servers/AdminServer/logs/
+  290  ls -lrt
+  291  tail -10000000000f AdminServer.log
+  292  cd ../../
+  293  cd ../
+  294  ls -lrt
+  295  cd bin/
+  296  nohup ./startWebLogic.sh &
+  297  tail -f nohup.out
+  298  cd /UCM12c/Oracle/Middleware/Oracle_Home/user_projects/domains/DMS_domain/
+  299  ls -lrt
+  300  cd ucm/
+  301  ls -lrt
+  302  cd cs
+  303  ls -lrt
+  304  cd bin/
+  305  ls -lrt
+  306  cd ..
+  307  ls -lrt
+  308  cd config/
+  309  ls -lrt
+  310  cat config.cfg
+  311  cd ..
+  312  ls -lrt
+  313  cd servers/AdminServer
+  314  ls -lrt
+  315  cd logs/
+  316  ls -lrt
+  317  tail -10000000000000000000f AdminServer.log
+  318  ls -lrt
+  319  tail -1000000000000f DMS_domain.log
+  320  ls -lrt
+  321  cd ..
+  322  ls -lrt
+  323  cd UCM_server1/logs/
+  324  ls -lrt
+  325  tail -1000000000000000000f UCM_server1.out
+  326  locate ucm/idc/config/
+  327  cd /UCM12c/Oracle/Middleware/Oracle_Home/wccontent/ucm/idc/config/
+  328  vim config.cfg
+  329  pwd
+  330  cd -
+  331  pwd
+  332  cd ..
+  333  ls -lrt
+  334  cd ..
+  335  ls -lrt
+  336  cd ..
+  337  ls -lrt
+  338  cd ..
+  339  ls -lrt
+  340  cd domains/DMS_domain/
+  341  ls -lrt
+  342  cd ucm/cs/bin
+  343  ls -lrt
+  344  vim ocm.cfg
+  345  cd ..
+  346  ls -lrt
+  347  cd config/
+  348  ls -lrt
+  349  vim config.cfg
+  350  cp config.cfg config.cfg_bkp27072020
+  351  ls -lrt
+  352  vim config.cfg
+  353  cd ..
+  354  locate config.cfg
+  355  pwd
+  356  cd /UCM12c/Oracle/Middleware/Oracle_Home/user_projects/domains/DMS_domain/ucm/cs/data/components/OCM/
+  357  vim config.cfg
+  358  cd /UCM12c/Oracle/Middleware/Oracle_Home/wccontent/ucm/idc/config/
+  359  ls -lrt
+  360  vim config.cfg
+  361  locate cs.war
+  362  pwd
+  363  cd ../../../../
+  364  ls -lrt
+  365  cd user_projects/domains/
+  366  ls -lrt
+  367  cd DMS_domain/
+  368  ls -lrt
+  369  locate cs.war
+  370  cd ..
+  371  cd DMS_domain/servers/AdminServer/logs/
+  372  ls -lrt
+  373  locate cs.war
+  374  cd ..
+  375  cd tmp/
+  376  ls -lrt
+  377  ls -al
+  378  cd .appmergegen_1595851209908_cs.ear
+  379  ls -lrt
+  380  cd ../
+  381  cd ..
+  382  ls -lrt
+  383  mv tmp tmp_bkp
+  384  ls -lrt
+  385  mv cache cache_bkp
+  386  ls -lrt
+  387  cd logs/
+  388  ls -lrt
+  389  cd ..
+  390  ls -lrt
+  391  mv logs logs_bkp
+  392  ls -lrt
+  393  cd adr/
+  394  ls -lrt
+  395  cd internal/
+  396  ls -lrt
+  397  cd diag/
+  398  ls -lrt
+  399  cd ../../../
+  400  ls -lrt
+  401  cd ..
+  402  cd bin/
+  403  nohup ./startWebLogic.sh &
+  404  tail -f nohup.out
+  405  df -h
+  406  locate cs.war
+  407  cd ../../
+  408  ls -lrt
+  409  cd DMS_domain/
+  410  ls -lrt
+  411  cd servers/UCM_server1/
+  412  ls -lrt
+  413  cd logs/
+  414  ls -lrt
+  415  tail -1000000000f UCM_server1.log
+  416  cd /UCM12c/Oracle/Middleware/Oracle_Home/wccontent/ucm/idc/components/ServletPlugin/
+  417  ls -lrt
+  418  pwd
+  419  cd
+  420  / UCM12c/ Oracle/ Middleware/ Oracle_Home/ wccontent/ ucm/ ocsh
+  421  cd
+  422  cd /UCM12c/Oracle/Middleware/Oracle_Home/wccontent/ucm/ocsh
+  423  ls -lrt
+  424  cd -
+  425  cd /UCM12c/Oracle/Middleware/Oracle_Home/
+  426  ls -lrt
+  427  cd user_projects/domains/
+  428  ls -lrt
+  429  cd DMS_domain/
+  430  ls -lrt
+  431  cd servers/AdminServer/
+  432  ls -lrt
+  433  cd logs
+  434  ls -lrt
+  435  tail -1000000000f DMS_domain.log
+  436  ls -lrt
+  437  tail -1000000000f AdminServer.log
+  438  ls -lrt
+  439  cd ..
+  440  ls -lrt
+  441  cd UCM_server1/logs/
+  442  ls -lrt
+  443  tail 100000000000f UCM_server1.out
+  444  tail -100000000000f UCM_server1.out
+  445  cd ../
+  446  cd ..
+  447  ls -lrt
+  448  cd config/
+  449  ls -lrt
+  450  cd  ucm/idc/config/config.cfg
+  451  cd ..
+  452  cd /ucm
+  453  ls -lrt
+  454  locate config.cfg
+  455  cd /UCM12c/Oracle/Middleware/Oracle_Home/user_projects/domains/DMS_domain/ucm/cs/config/
+  456  ls -lrt
+  457  vim config.cfg
+  458  hostname -i
+  459  cat config.cfg
+  460  cd ..
+  461  cd ../../
+  462  cd servers/AdminServer/logs
+  463  ls -lrt
+  464  cd ..
+  465  ls -lrt
+  466  cd UCM_server1/
+  467  ls -lrt
+  468  cd logs/
+  469  ls -lrt
+  470  tail -10000000f UCM_server1.out
+  471  ls -lrt
+  472  tail -100000000000f UCM_server1.log
+  473  ls -al
+  474  top
+  475  history
+  476  free -gh
+  477  p s-ef |grep java
+  478  ps-ef |grep java
+  479  ps -ef |grep java
+  480  cd /UCM12c/Oracle/Middleware/Oracle_Home/user_projects/domains/DMS_domain/servers/UCM_server2/
+  481  pwd
+  482  cd /UCM12c/Oracle/Middleware/Oracle_Home/user_projects/domains/DMS_domain/servers/UCM_server2
+  483  cd /UCM12c/Oracle/Middleware/Oracle_Home/user_projects/domains/DMS_domain/servers/
+  484  ll
+  485  cd UCM_server1
+  486  ll
+  487  pwd
+  488  cd logs
+  489  ll
+  490  pwd
+  491  cd ..
+  492  ll
+  493  cd ..
+  494  ll
+  495  pwd
+  496  ps -ef | grep java
+  497  pwdx 32416
+  498  cd /UCM12c/Oracle/Middleware/Oracle_Home/user_projects/domains/DMS_domain
+  499  cd servers
+  500  ls
+  501  ifconfig
+  502  ls
+  503  cd UCM_server1/logs
+  504  ls -lrt
+  505  less UCM_server1.log
+  506  tail -f UCM_server1.out
+  507  ls
+  508  ifconfig
+  509  ps -ef | grep java
+  510  ps -ef | grep Node
+  511  kill -9 23666
+  512  ps -ef | grep Node
+  513  ps -ef | grep java
+  514  pwd
+  515  cd ..
+  516  ls -lrt
+  517  mv tmp tmp_29072020
+  518  mv cache cache_29072020
+  519  mv logs logs_29072020
+  520  mv stage stage_29072020
+  521  cd ../AdminServer
+  522  ls
+  523  ls -l
+  524  mv tmp tmp_29072020
+  525  mv cache cahe_29072020
+  526  mv logs logs_29072020
+  527  mv stage stage_29072020
+  528  ls
+  529  cd ../../bin
+  530  nohup ./startWebLogic.sh &
+  531  tail -f nohup.out
+  532  nohup ./startNodeManager.sh &
+  533  tail -f nohup.out
+  534  cd ../servers/UCM_server1/
+  535  ls -lrt
+  536  cd logs
+  537  ls -lrt
+  538  tail -f UCM_server1.log
+  539  ls -lrt
+  540  less UCM_server1-diagnostic.log
+  541  tail -f UCM_server1.out
+  542  less UCM_server1.out
+  543  less UCM_server1.log
+  544  pwd
+  545  cd /UCM12c/Oracle/Middleware/Oracle_Home/wccontent/ucm/idc/components/
+  546  ls
+  547  cd ServletPlugin/
+  548  ls
+  549  ls -l
+  550  locatecs.ear
+  551  locate cs.ear
+  552  less /UCM12c/Oracle/Middleware/Oracle_Home/user_projects/DMS_domain_14May2018/servers/AdminServer/tmp/.appmergegen_1555319584205/cs.ear/utt8ej/WEB-INF/weblogic.xml
+  553  locate weblogic.management.DeploymentException: [J2EE:160149]Error while processing library references. Unresolved application library references, defined in weblogic-application.xml: [Extension-Name: ReportPublisher Library, exact-match: false
+  554  clear
+  555  pwd
+  556  cd /UCM12c/Oracle/Middleware/Oracle_Home/user_projects/domains/DMS_domain/servers/AdminServer
+  557  ls -lrt
+  558  cd logs
+  559  ls -lrt
+  560  less DMS_domain.log
+  561  less AdminServer.log
+  562  df -h
+  563  cd ../../UCM_server1/logs
+  564  tail -f UCM_server1.log
+  565  ps -ef | grep java
+  566  pwdx 17462
+  567  cd /UCM12c/Oracle/Middleware/Oracle_Home/user_projects/domains/DMS_domain/servers/AdminServer/logs
+  568  ls -lrt
+  569  clear
+  570  ls -lrt
+  571  vi AdminServer.log
+  572  less DMS_domain.log
+  573  pwd
+  574  ps -ef | grep java
+  575  killall -9 16174
+  576  ps -ef | grep java
+  577  killall -9 java
+  578  ps -ef | grep java
+  579  pwd
+  580  cd ../../../bin
+  581  nohup ./startWebLogic.sh &
+  582  tail -f nohup.out
+  583  cd / UCM12c/ Oracle/ Middleware/ Oracle_Home/ wccontent/ ucm/ idc/ components/ ServletPlugin/ cs. ear
+  584  cd /UCM12c/Oracle/Middleware/Oracle_Home/wccontent/ucm/idc/components/ServletPlugin/
+  585  ls
+  586  pwd
+  587  ifconfig
+  588  pwd
+  589  ll
+  590  cd /
+  591  ll
+  592  cd UCM12c/
+  593  ll
+  594  cd Oracle/Middleware/
+  595  cd Oracle_Home/user_projects/domains/
+  596  ll
+  597  cd DMS_domain/
+  598  ll
+  599  cd bin/
+  600  ll
+  601  ps -ef | grep Node
+  602  nohup ./startNodeManager.sh &
+  603  tail -f nohup.out
+  604  ll
+  605  cd ../
+  606  cd servers/
+  607  df -h
+  608  cd /UCM12c/
+  609  ls
+  610  cd softwares/
+  611  ls
+  612  java -version
+  613  xclock
+  614  cd ../Oracle/
+  615  ls
+  616  cd
+  617  cd /UCM12c/
+  618  ls
+  619  cd Oracle/
+  620  ls
+  621  ls -l
+  622  cd Middleware/
+  623  ls
+  624  cd Oracle_Home/
+  625  ls
+  626  cd wccontent/
+  627  ls
+  628  cd plugins/
+  629  ls
+  630  cd ..
+  631  ls
+  632  cd common/
+  633  ls
+  634  cd ..
+  635  ls
+  636  cd wccadf
+  637  ls
+  638  pwd
+  639  cd ../
+  640  ls
+  641  cd wccadfrui/
+  642  ls
+  643  cd Distribution/
+  644  ls
+  645  cd RUI/
+  646  ls
+  647  pwd
+  648  cd ../../../
+  649  ls
+  650  cd ..
+  651  ls
+  652  cd wccapture/
+  653  ls
+  654  cd plugins/
+  655  ls
+  656  cd ../capture/
+  657  ls
+  658  cd ../..
+  659  ls
+  660  cd oracle_common/
+  661  ls
+  662  cd modules/
+  663  ls
+  664  pwd
+  665  cd ../common/bin
+  666  ./config.sh
+  667  clear
+  668  locate oracle.ess.dc
+  669  locate oracle.ucm.ridc.app-lib
+  670  locate ReportPublisher Library
+  671  cd /UCM12c/Oracle/Middleware/Oracle_Home/wccontent/ucm/idc/components/ReportPublisher
+  672  ls
+  673  cd lib/
+  674  ls
+  675  cd APP-INF/
+  676  ls
+  677  cd lib/
+   867  ./pack.sh -managed=true -domain=/UCM12c/Oracle/Middleware/Oracle_Home/user_projects/domains/DMS_domain -template=/tmp/DMS_domain.jar -template_name=DMS_domain.jar
+  868  cd /tmp/
+  869  ll
+  870  ls -lrt
+  871  pwd
+  872  cd /
+  873  ll
+  874  cd UCM12c/
+  875  ll
+  876  cd Oracle/Middleware/
+  877  cd Oracle_Home
+  878  export ORACLE_HOME=/UCM12c/Oracle/Middleware/Oracle_Home
+  879  cd user_projects/
+  880  ll
+  881  cd domains/
+  882  ll
+  883  cd DMS_domain/bin/
+  884  ll
+  885  cd ../
+  886  ll
+  887  cd bin/
+  888  ll
+  889  ./startWebLogic.sh
+  890  ps -ef | grep java
+  891  pwd
+  892  cd ../
+  893  cd servers/AdminServer
+  894  ls -lrt
+  895  mkdir security
+  896  cd security/
+  897  vim boot.properties
+  898  ll
+  899  chmod -R 775 *
+  900  ll
+  901  cat boot.properties
+  902  cd ../../
+  903  cd DMS_domain/
+  904  java -verion
+  905  java -version
+  906  export JAVA_HOME=/UCM12c/jdk1.8.0_201
+  907  export PATH=$JAVA_HOME/bin:$PATH
+  908  cd bin/
+  909  pwd
+  910  export ORACLE_HOME=/UCM12c/Oracle/Middleware/Oracle_Home
+  911  nohup ./startWebLogic.sh &
+  912  tail -f nohup.out
+  913  nohup ./startNodeManager.sh &
+  914  tail -f nohup.out
+  915  pwd
+  916  cd ../
+  917  ll
+  918  pwd
+  919  ls lrt
+  920  ls -lrt
+  921  ll
+  922  cd /
+  923  ll
+  924  cd UCM12c/Oracle/Middleware/Oracle_Home
+  925  ll
+  926  cd user_projects/domains/DMS_domain/servers/
+  927  ll
+  928  cd UCM_server1/logs/
+  929  ls -lrt
+  930  tail -1000f UCM_server1.out
+  931  cd /
+  932  ps -ef | grep java
+  933  netstat -nltp
+  934  ps -ef | grep java
+  935  kill -9 8352
+  936  hostname -i
+  937  ps -ef | grep java
+  938  ll
+  939  cd UCM12c/
+  940  ll
+  941  cd Oracle/Middleware/Oracle_Home/user_projects/domains/DMS_domain/
+  942  cd bin/
+  943  ps -ef | grep java
+  944  nohup ./startWebLogic.sh &
+  945  hostname -i
+  946  nohup ./startNodeManager.sh &
+  947  tail -f nohup.out
+  948  cd config
+  949  cat config.xml | grep 4444
+  950  netstat -an | grep 4443
+  951  cd /UCM12c/jdk1.8.0_201/bin/
+  952  cd /UCM12c/Oracle/Middleware/Oracle_Home/user_projects/domains/DMS_domain/
+  953  ls -lrt
+  954  mkdir SSL1062020
+  955  cd SSL1062020
+  956  pwd
+  957  cd /UCM12c/jdk1.8.0_201/bin/
+  958  ./keytool -genkey -alias DMS -keyalg RSA -keystore /UCM12c/Oracle/Middleware/Oracle_Home/user_projects/domains/DMS_domain/SSL1062020/DMS.jks -keysize 2048 -validity 3650 -keypass Sbi@12345 -storepass Sbi@12345 -dname "
+  959  hostname
+  960  ./keytool -genkey -alias DMS -keyalg RSA -keystore /UCM12c/Oracle/Middleware/Oracle_Home/user_projects/domains/DMS_domain/SSL1062020/DMS.jks -keysize 2048 -validity 3650 -keypass Sbi@12345 -storepass Sbi@12345 -dname "CN=LLMSSMEAGRIAPP1UAT,OU=IT-Corporate SME Loans Department,O=State Bank Of India, L=Navi Mumbai, ST=Maharastra, C=IN"
+  961  ./keytool -certreq -keyalg RSA -alias DMS -file /UCM12c/Oracle/Middleware/Oracle_Home/user_projects/domains/DMS_domain/SSL1062020/DMS.csr -keystore /UCM12c/Oracle/Middleware/Oracle_Home/user_projects/domains/DMS_domain/SSL1062020/DMS.jks
+  962  ./keytool -list -v -keystore /UCM12c/Oracle/Middleware/Oracle_Home/user_projects/domains/DMS_domain/SSL1062020/DMS.jks
+  963  cat /UCM12c/Oracle/Middleware/Oracle_Home/user_projects/domains/DMS_domain/SSL1062020/DMS.csr
+  964  cd /
+  965  ls -lrt
+  966  exit
+  967  cd /
+  968  cat llmswcc_publickey_2.cer
+  969  ls -lrt
+  970  mv llmswcc_publickey_2.cer /UCM12c/Oracle/Middleware/Oracle_Home/user_projects/domains/DMS_domain/SSL1062020
+  971  cp  llmswcc_publickey_2.cer /UCM12c/Oracle/Middleware/Oracle_Home/user_projects/domains/DMS_domain/SSL1062020
+  972  cd /UCM12c/Oracle/Middleware/Oracle_Home/user_projects/domains/DMS_domain/SSL1062020
+  973  ls -lrt
+  974  cd /
+  975  cp -r root.cer certnew.cer /UCM12c/Oracle/Middleware/Oracle_Home/user_projects/domains/DMS_domain/SSL1062020
+  976  ls -lrt
+  977  cd /UCM12c/Oracle/Middleware/Oracle_Home/user_projects/domains/DMS_domain/SSL1062020
+  978  ls -lrt
+  979  ps -ef | grep java
+  980  cd /UCM12c/jdk1.8.0_201/bin/
+  981  ./keytool -import -trustcacerts -alias root -file /UCM12c/Oracle/Middleware/Oracle_Home/user_projects/domains/DMS_domain/SSL1062020/root.cer -keystore /UCM12c/Oracle/Middleware/Oracle_Home/user_projects/domains/DMS_domain/SSL1062020/DMS.jks
+  982  cd /UCM12c/Oracle/Middleware/Oracle_Home/user_projects/domains/DMS_domain/SSL1062020/
+  983  ls -lrt
+  984  cd ..
+  985  ls -lrt
+  986  tar -czvf SSL1062020.tar.gz SSL1062020
+  987  ls -lrt
+  988  cd -
+  989  ps -ef | grep java
+  990  cd /UCM12c/jdk1.8.0_201/bin/
+  991  ./keytool -import -trustcacerts -alias root -file /UCM12c/Oracle/Middleware/Oracle_Home/user_projects/domains/DMS_domain/SSL1062020/root.cer -keystore /UCM12c/Oracle/Middleware/Oracle_Home/user_projects/domains/DMS_domain/SSL1062020/DMS.jks
+  992  history
+  993  ./keytool -import -trustcacerts -alias DMS -keystore /UCM12c/Oracle/Middleware/Oracle_Home/user_projects/domains/DMS_domain/SSL1062020/DMS.jks -file /UCM12c/Oracle/Middleware/Oracle_Home/user_projects/domains/DMS_domain/SSL1062020/certn
+  994  cd /UCM12c/Oracle/Middleware/Oracle_Home/user_projects/domains/DMS_domain/SSL1062020/
+  995  ls -lrt
+  996  cd -
+  997  pwd
+  998  ./keytool -import -trustcacerts -alias DMS -keystore /UCM12c/Oracle/Middleware/Oracle_Home/user_projects/domains/DMS_domain/SSL1062020/DMS.jks -file /UCM12c/Oracle/Middleware/Oracle_Home/user_projects/domains/DMS_domain/SSL1062020/llmswcc_publickey_2.cer
+  999  ./keytool -import -trustcacerts -alias llmswcc -keystore /UCM12c/Oracle/Middleware/Oracle_Home/user_projects/domains/DMS_domain/SSL1062020/DMS.jks -file /UCM12c/Oracle/Middleware/Oracle_Home/user_projects/domains/DMS_domain/SSL1062020/llmswcc_publickey_2.cer
+ 1000  netstat -nltp
+ 1001  netstat -an | grep 16201
+ 1002  ps -ef | grep java
+ 1003  cd /UCM12c/Oracle/Middleware/Oracle_Home/user_projects/domains/DMS_domain/
+ 1004  cd servers/
+ 1005  ls -lrt
+ 1006  cd UCM_server1
+ 1007  ls -lrt
+ 1008  cd logs/
+ 1009  ls -lrt
+ 1010  tail -1000f UCM_server1.out
+ 1011  cd /UCM12c/Oracle/Middleware/Oracle_Home/user_projects/domains/DMS_domain/SSL1062020/
+ 1012  ls -lrt
+ 1013  chmod -R 755 *
+ 1014  ls -lrt
+ 1015  cd -
+ 1016  ls -lrt
+ 1017  tail -100000f UCM_server1.out
+ 1018  netstat -nltp
+ 1019  netstat -an | grep 16201
+  
+  
