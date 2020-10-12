@@ -1,1 +1,188 @@
+[root@LLMSLOSSMEAGRIWEB01ST ohs1]# cat admin.conf
+##
+# This Oracle HTTP Server configuration file contains directives
+# required for communication between Node Manager and Oracle HTTP
+# Server.  The port number and local address can be customized,
+# but other changes are not recommended and may result in an
+# inability to manage the lifecycle of the Oracle HTTP Server
+# instance.
+#
+# If the port number or local address need to be customized, ensure
+# that both the Listen and the VirtualHost directives are updated.
+#
 
+LoadModule dms_module "${PRODUCT_HOME}/modules/mod_dms.so"
+
+#[Listen] OHS_PROXY_PORT
+Listen 127.0.0.1:9999
+#[VirtualHost] OHS_PROXY_VH
+<VirtualHost 127.0.0.1:9999>
+   #  SSL Engine Switch:
+   #  Enable/Disable SSL for this virtual host.
+   SSLEngine on
+
+   #  Client Authentication (Type):
+   #  Client certificate verification type and depth.  Types are
+   #  none, optional and require.
+   SSLVerifyClient None
+
+   #  SSL Protocol Support:
+   #  Configure usable SSL/TLS protocol versions.
+   #SSLProtocol ALL
+   SSLProtocol -All +TLSv1.2
+   #  SSL Cipher Suite:
+   #  List the ciphers that the client is permitted to negotiate.
+   #SSLCipherSuite TLS_AES_128_GCM_SHA256:TLS_AES_256_GCM_SHA384:TLS_CHACHA20_POLY1305_SHA256
+   SSLCipherSuite ECDHE-ECDSA-AES256-GCM-SHA384:ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-RSA-AES128-GCM-SHA256:DHE-RSA-AES256-GCM-SHA384:DHE-RSA-AES128-GCM-SHA256:AES256-GCM-SHA384:AES128-GCM-SHA256
+
+   # SSL Certificate Revocation List Check
+   # Valid values are On and Off
+   SSLCRLCheck Off
+
+   #Path to the wallet
+  # SSLWallet "${ORACLE_INSTANCE}/config/fmwconfig/components/${COMPONENT_TYPE}/instances/${COMPONENT_NAME}/keystores/default"
+  SSLWallet "/data3/Middleware/user_projects/domains/LLMS/config/fmwconfig/components/OHS/instances/ohs1/LOS_SSLWALLET"
+   <FilesMatch "\.(cgi|shtml|phtml|php)$">
+      SSLOptions +StdEnvVars
+   </FilesMatch>
+
+   <Directory "${ORACLE_INSTANCE}/config/fmwconfig/components/${COMPONENT_TYPE}/instances/${COMPONENT_NAME}/cgi-bin">
+      SSLOptions +StdEnvVars
+   </Directory>
+
+<Location /dms/>
+  SetHandler dms-handler
+  Require all granted
+</Location>
+
+CustomLog "||${PRODUCT_HOME}/bin/odl_rotatelogs ${ORACLE_INSTANCE}/servers/${COMPONENT_NAME}/logs/admin_log 43200" common
+
+<IfModule ossl_module>
+  SSLEngine off
+</IfModule>
+
+</VirtualHost>
+[root@LLMSLOSSMEAGRIWEB01ST ohs1]#
+******************************************************************************************
+
+
+
+
+[root@LLMSLOSSMEAGRIWEB01ST ohs1]# cat ssl.conf
+###################################################################
+# Oracle HTTP Server mod_ossl configuration file: ssl.conf        #
+###################################################################
+
+# The Listen directive below has a comment preceding it that is used
+# by tooling which updates the configuration.  Do not delete the comment.
+#[Listen] OHS_SSL_PORT
+Listen LLMSLOSSMEAGRIWEB01ST:443
+
+<IfModule ossl_module>
+##
+##  SSL Global Context
+##
+##  All SSL configuration in this context applies both to
+##  the main server and all SSL-enabled virtual hosts.
+##
+
+#
+#   Some MIME-types for downloading Certificates and CRLs
+    AddType application/x-x509-ca-cert .crt
+    AddType application/x-pkcs7-crl    .crl
+
+#   Inter-Process Session Cache:
+#   Configure the SSL Session Cache: First the mechanism
+#   to use, second the expiring timeout (in seconds) and third
+#   the mutex to be used.
+    SSLSessionCache "shmcb:${ORACLE_INSTANCE}/servers/${COMPONENT_NAME}/logs/ssl_scache(512000)"
+    SSLSessionCacheTimeout  300
+    <IfModule !mpm_winnt_module>
+      Mutex pthread ssl-cache
+    </IfModule>
+
+##
+## SSL Virtual Host Context
+##
+#[VirtualHost] OHS_SSL_VH
+<VirtualHost LLMSLOSSMEAGRIWEB01ST:443>
+  <IfModule ossl_module>
+   #  SSL Engine Switch:
+   #  Enable/Disable SSL for this virtual host.
+   SSLEngine on
+
+   #  Client Authentication (Type):
+   #  Client certificate verification type and depth.  Types are
+   #  none, optional and require.
+   SSLVerifyClient None
+
+   #  SSL Protocol Support:
+   #  Configure usable SSL/TLS protocol versions.
+   #SSLProtocol ALL
+   SSLProtocol -All +TLSv1.2
+   #  SSL Cipher Suite:
+   #  List the ciphers that the client is permitted to negotiate.
+   #SSLCipherSuite TLS_AES_128_GCM_SHA256:TLS_AES_256_GCM_SHA384:TLS_CHACHA20_POLY1305_SHA256
+   SSLCipherSuite ECDHE-ECDSA-AES256-GCM-SHA384:ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-RSA-AES128-GCM-SHA256:DHE-RSA-AES256-GCM-SHA384:DHE-RSA-AES128-GCM-SHA256:AES256-GCM-SHA384:AES128-GCM-SHA256
+
+   # SSL Certificate Revocation List Check
+   # Valid values are On and Off
+   SSLCRLCheck Off
+
+   #Path to the wallet
+  # SSLWallet "${ORACLE_INSTANCE}/config/fmwconfig/components/${COMPONENT_TYPE}/instances/${COMPONENT_NAME}/keystores/default"
+  SSLWallet "/data3/Middleware/user_projects/domains/LLMS/config/fmwconfig/components/OHS/instances/ohs1/LOS_SSLWALLET"
+   <FilesMatch "\.(cgi|shtml|phtml|php)$">
+      SSLOptions +StdEnvVars
+   </FilesMatch>
+
+   <Directory "${ORACLE_INSTANCE}/config/fmwconfig/components/${COMPONENT_TYPE}/instances/${COMPONENT_NAME}/cgi-bin">
+      SSLOptions +StdEnvVars
+   </Directory>
+#Enable compression
+##SetOutputFilter DEFLATE
+##AddOutputFilterByType DEFLATE text/html
+##AddOutputFilterByType DEFLATE text/css
+##AddOutputFilterByType DEFLATE application/javascript
+##AddOutputFilterByType DEFLATE application/x-javascript
+##AddOutputFilterByType DEFLATE text/javascript
+##AddOutputFilterByType DEFLATE application/vnd.ms-excel
+##AddOutputFilterByType DEFLATE application/msexcel
+##AddOutputFilterByType DEFLATE application/x-msexcel
+
+#ProxyPreserveHost On
+#ProxyVia on
+
+#ProxyPass /LOSSme/js !
+#ProxyPass /LOSSme/css !
+#ProxyPass /LOSSme/img !
+
+#ProxyPass /LOSAgri/js/ !
+#ProxyPass /LOSAgri/css/ !
+#ProxyPass /LOSAgri/img/ !
+
+ExpiresActive On
+ExpiresByType image/jpeg "access plus 1 year"
+ExpiresByType image/gif "access plus 1 year"
+ExpiresByType image/png "access plus 1 year"
+ExpiresByType text/css "access plus 1 month"
+ExpiresByType text/javascript "access plus 1 month"
+ExpiresByType application/javascript "access plus 1 month"
+ExpiresByType application/x-javascript "access plus 1 month"
+ExpiresByType application/x-shockwave-flash "access plus 1 month"
+ExpiresByType image/ico "access plus 1 year"
+<FilesMatch "\.(ico|gif|jpeg|jpg|png|gif|css|js|swf|jar)$">
+Header set Cache-Control "public, max-age=31104000"
+</FilesMatch>
+
+##Added by rami_HTTP Strict Transport Security (mod_headers is required) (63072000 seconds)
+Header always set Strict-Transport-Security "max-age=63072000"
+
+##   BrowserMatch "MSIE [2-5]" \
+##         nokeepalive ssl-unclean-shutdown \
+##         downgrade-1.0 force-response-1.0
+
+  </IfModule>
+</VirtualHost>
+
+</IfModule>
