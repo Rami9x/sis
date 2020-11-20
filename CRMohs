@@ -1,0 +1,39 @@
+-rwxr-x---. 1 oracle oracle 4291 Mar 16  2017 chghost.sh
+-rwxr-x---. 1 oracle oracle 5633 Aug 17  2017 copyBinary.sh
+-rwxr-x---. 1 oracle oracle 1320 Aug  9  2017 fmw-composer.sh
+-rwxr-x---. 1 oracle oracle 3634 Aug 10  2017 mkstore
+-rwxr-x---. 1 oracle oracle 1882 Aug 10  2017 mkstore.bat
+-rwxr-x---. 1 oracle oracle 1016 Jan 26  2017 ocp.sh
+-rwxr-x---. 1 oracle oracle 4621 Aug 10  2017 orapki
+-rwxr-x---. 1 oracle oracle 2431 Aug 10  2017 orapki.bat
+-rwxr-x---. 1 oracle oracle 6801 Aug 17  2017 pasteBinary.sh
+-rwxr-x---. 1 oracle oracle 1334 Aug  9  2017 wallet-manager.sh
+[root@LLMSLOSSMEAGRIWEB01ST bin]# ./orapki wallet add -wallet /data3/Middleware/user_projects/domains/LLMS/config/fmwconfig/components/OHS/instances/ohs1/WALT -user_cert -cert /data3/Middleware/user_projects/domains/LLMS/config/fmwconfig/components/OHS/instances/ohs1/certnew.cer
+Oracle PKI Tool : Version 12.2.1.3.0
+Copyright (c) 2004, 2017, Oracle and/or its affiliates. All rights reserved.
+
+Cannot modify auto-login (sso) wallet
+Enter wallet password:
+Unable to read certificate at /data3/Middleware/user_projects/domains/LLMS/config/fmwconfig/components/OHS/instances/ohs1/certnew.cer
+[root@LLMSLOSSMEAGRIWEB01ST bin]# ./orapki wallet add -wallet /data3/Middleware/user_projects/domains/LLMS/config/fmwconfig/components/OHS/instances/ohs1/WALT -user_cert -cert /data3/Middleware/user_projects/domains/LLMS/config/fmwconfig/components/OHS/instances/ohs1/certnew.cer
+Oracle PKI Tool : Version 12.2.1.3.0
+Copyright (c) 2004, 2017, Oracle and/or its affiliates. All rights reserved.
+
+Cannot modify auto-login (sso) wallet
+Enter wallet password:
+Unable to read certificate at /data3/Middleware/user_projects/domains/LLMS/config/fmwconfig/components/OHS/instances/ohs1/certnew.cer
+[root@LLMSLOSSMEAGRIWEB01ST bin]# ./orapki wallet add -wallet /data3/Middleware/user_projects/domains/LLMS/config/fmwconfig/components/OHS/instances/ohs1/WALT -trusted_cert -cert //data3/Middleware/user_projects/domains/LLMS/config/fmwconfig/components/OHS/instances/ohs1/WALT/certnew.p7b
+Oracle PKI Tool : Version 12.2.1.3.0
+Copyright (c) 2004, 2017, Oracle and/or its affiliates. All rights reserved.
+
+Cannot modify auto-login (sso) wallet
+Enter wallet password:
+Operation is successfully completed.
+[root@LLMSLOSSMEAGRIWEB01ST bin]# ./orapki wallet add -wallet /data3/Middleware/user_projects/domains/LLMS/config/fmwconfig/components/OHS/instances/ohs1/WALT -user_cert -cert /data3/Middleware/user_projects/domains/LLMS/config/fmwconfig/components/OHS/instances/ohs1/WALT/certnew.cer
+Oracle PKI Tool : Version 12.2.1.3.0
+Copyright (c) 2004, 2017, Oracle and/or its affiliates. All rights reserved.
+
+Cannot modify auto-login (sso) wallet
+Enter wallet password:
+Operation is successfully completed.
+[root@LLMSLOSSMEAGRIWEB01ST bin]#
